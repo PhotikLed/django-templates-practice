@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Каталог библиотеки{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'catalog/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Каталог библиотеки</h1>
+        <nav>
+            <a href="{% url 'catalog:book_list' %}">Список книг</a> |
+            <a href="{% url 'catalog:book_detail' %}">Книга</a>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
